@@ -1,0 +1,24 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+
+  <!-- App icon background: Black -->
+  <rect width="1024" height="1024" rx="230" fill="#0B0B0D"/>
+
+  <!-- 2x2 operator grid: button 380x380, gap 40, offset 112 -->
+
+  <!-- + top-left: white button, black text -->
+  <rect x="112" y="112" width="380" height="380" rx="60" fill="#FFFFFF"/>
+  <text x="302" y="302" font-family="sans-serif" font-size="220" fill="#0B0B0D" text-anchor="middle" dominant-baseline="central" font-weight="200">+</text>
+
+  <!-- minus top-right: white button, black text -->
+  <rect x="532" y="112" width="380" height="380" rx="60" fill="#FFFFFF"/>
+  <text x="722" y="302" font-family="sans-serif" font-size="220" fill="#0B0B0D" text-anchor="middle" dominant-baseline="central" font-weight="200">&#x2212;</text>
+
+  <!-- multiply bottom-left: white button, black text -->
+  <rect x="112" y="532" width="380" height="380" rx="60" fill="#FFFFFF"/>
+  <text x="302" y="722" font-family="sans-serif" font-size="200" fill="#0B0B0D" text-anchor="middle" dominant-baseline="central" font-weight="200">&#xd7;</text>
+
+  <!-- = bottom-right: Electric Blue -->
+  <rect x="532" y="532" width="380" height="380" rx="60" fill="#3B82F6"/>
+  <text x="722" y="722" font-family="sans-serif" font-size="220" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central" font-weight="600">=</text>
+
+</svg>

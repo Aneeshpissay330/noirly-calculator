@@ -1,4 +1,4 @@
-package com.calculator
+package com.noirly.calculator
 
 import android.app.Application
 import com.facebook.react.PackageList

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Noirly Calculator</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Tokens (dark theme) ── */
+    :root {
+      --bg:               #0F0F11;
+      --surface:          #141417;
+      --surface-high:     #222227;
+      --outline:          #333340;
+      --primary:          #60a5fa;
+      --primary-dim:      #3B82F6;
+      --secondary:        #B11226;
+      --on-surface:       #F0F0F2;
+      --on-surface-var:   #B0B0B8;
+      --radius:           16px;
+    }
+
+    /* ── Base ── */
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--on-surface);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      padding: 10px 22px 10px 14px;
+      margin-bottom: 32px;
+    }
+
+    .app-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary-dim);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .app-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--on-surface);
+      letter-spacing: 0.3px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      color: var(--on-surface);
+    }
+
+    h1 span { color: var(--primary); }
+
+    .subtitle {
+      color: var(--on-surface-var);
+      font-size: 15px;
+    }
+
+    .updated-chip {
+      display: inline-block;
+      background: var(--surface-high);
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--on-surface-var);
+      padding: 4px 14px;
+      margin-top: 14px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--outline);
+      margin: 48px 0;
+    }
+
+    /* ── Sections ── */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    section:hover {
+      border-color: rgba(96, 165, 250, 0.25);
+      transition: border-color 0.2s ease;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .icon-blue  { background: rgba(96, 165, 250, 0.12); }
+    .icon-red   { background: rgba(177, 18,  38,  0.15); }
+    .icon-green { background: rgba(52,  211, 153, 0.12); }
+    .icon-amber { background: rgba(251, 191, 36,  0.12); }
+    .icon-teal  { background: rgba(45,  212, 191, 0.12); }
+    .icon-gray  { background: rgba(176, 176, 184, 0.10); }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 650;
+      color: var(--on-surface);
+      letter-spacing: 0.1px;
+    }
+
+    p { color: var(--on-surface-var); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      color: var(--on-surface-var);
+      padding-left: 22px;
+      margin-bottom: 12px;
+    }
+
+    li { margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+
+    strong { color: var(--on-surface); font-weight: 600; }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: rgba(96, 165, 250, 0.08);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0 0;
+      color: var(--on-surface-var);
+      font-size: 14px;
+    }
+
+    .highlight strong { color: var(--primary); }
+
+    /* ── Warning box ── */
+    .warning {
+      background: rgba(177, 18, 38, 0.08);
+      border-left: 3px solid var(--secondary);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0 0;
+      color: var(--on-surface-var);
+      font-size: 14px;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface-high);
+      border: 1px solid var(--outline);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    .contact-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #34d399;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      color: var(--on-surface-var);
+      margin-bottom: 2px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--outline);
+      color: var(--on-surface-var);
+      font-size: 13px;
+    }
+
+    footer .brand { color: var(--primary); font-weight: 600; }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      margin-bottom: 32px;
+    }
+
+    .toc-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--on-surface-var);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      color: var(--on-surface-var);
+      list-style: decimal;
+      padding-left: 18px;
+      column-count: 2;
+      column-gap: 24px;
+    }
+
+    .toc li { font-size: 14px; margin-bottom: 6px; }
+    .toc a { color: var(--on-surface-var); }
+    .toc a:hover { color: var(--primary); }
+
+    @media (max-width: 520px) {
+      section { padding: 20px 18px; }
+      .toc ol { column-count: 1; }
+      .page { padding: 32px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ── Header ── -->
+    <header>
+      <div class="app-badge">
+        <div class="app-icon">🧮</div>
+        <span class="app-name">Noirly Calculator</span>
+      </div>
+      <h1>Privacy <span>Policy</span></h1>
+      <p class="subtitle">We respect your privacy. Here is everything you need to know.</p>
+      <span class="updated-chip">Last updated: May 7, 2026</span>
+    </header>
+
+    <!-- ── Table of Contents ── -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#data-collected">Data We Collect</a></li>
+        <li><a href="#local-storage">Local Storage</a></li>
+        <li><a href="#permissions">App Permissions</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#changes">Policy Changes</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- ── 1. Overview ── -->
+    <section id="overview">
+      <div class="section-header">
+        <div class="section-icon icon-blue">🔒</div>
+        <h2>Overview</h2>
+      </div>
+      <p>
+        <strong>Noirly Calculator</strong> is a free, offline-first calculator application. We are
+        committed to protecting your privacy. This policy describes how the app handles information
+        when you use it.
+      </p>
+      <div class="highlight">
+        <strong>Short version:</strong> Noirly Calculator does not collect, transmit, or share any
+        personal data. All computation and storage happens entirely on your device.
+      </div>
+    </section>
+
+    <!-- ── 2. Data We Collect ── -->
+    <section id="data-collected">
+      <div class="section-header">
+        <div class="section-icon icon-green">📋</div>
+        <h2>Data We Collect</h2>
+      </div>
+      <p>We do <strong>not</strong> collect any of the following:</p>
+      <ul>
+        <li>Personal identifiers (name, email address, phone number)</li>
+        <li>Location data</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Usage analytics or crash reports sent to our servers</li>
+        <li>Financial or payment information</li>
+        <li>Any data from your clipboard or contacts</li>
+      </ul>
+      <p>
+        No account creation is required and no sign-in is ever requested.
+      </p>
+    </section>
+
+    <!-- ── 3. Local Storage ── -->
+    <section id="local-storage">
+      <div class="section-header">
+        <div class="section-icon icon-teal">💾</div>
+        <h2>Local Storage</h2>
+      </div>
+      <p>
+        Noirly Calculator stores the following data <strong>locally on your device only</strong>:
+      </p>
+      <ul>
+        <li><strong>Calculation history</strong> — past calculations you have performed.</li>
+        <li><strong>App preferences</strong> — your chosen theme (light / dark / system), and other
+          settings you configure.</li>
+        <li><strong>Graph expressions</strong> — function expressions you have entered in the
+          Graphing screen.</li>
+      </ul>
+      <div class="highlight">
+        This data never leaves your device. It is stored using the device's local storage (AsyncStorage /
+        Redux Persist) and is only accessible by the app itself. You can clear it at any time from
+        within the app's Settings screen.
+      </div>
+    </section>
+
+    <!-- ── 4. Permissions ── -->
+    <section id="permissions">
+      <div class="section-header">
+        <div class="section-icon icon-amber">🛡️</div>
+        <h2>App Permissions</h2>
+      </div>
+      <p>Noirly Calculator requests <strong>no special device permissions</strong>. It does not
+        require access to:</p>
+      <ul>
+        <li>Camera or microphone</li>
+        <li>Contacts or call logs</li>
+        <li>Location services</li>
+        <li>Files or media storage beyond its own sandboxed data</li>
+        <li>Network / internet access</li>
+      </ul>
+      <p>
+        The app functions fully offline. No network connection is required or used at any point.
+      </p>
+    </section>
+
+    <!-- ── 5. Third-Party Services ── -->
+    <section id="third-party">
+      <div class="section-header">
+        <div class="section-icon icon-red">🔗</div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <p>
+        Noirly Calculator does <strong>not</strong> integrate any third-party SDKs that collect
+        personal data, including:
+      </p>
+      <ul>
+        <li>No advertising networks</li>
+        <li>No analytics platforms (e.g. Firebase Analytics, Mixpanel)</li>
+        <li>No crash-reporting services that transmit data externally</li>
+        <li>No social login providers</li>
+      </ul>
+      <div class="warning">
+        If you download the app via the Google Play Store or Apple App Store, those platforms may
+        collect their own usage data governed by their respective privacy policies, which are
+        outside our control.
+      </div>
+    </section>
+
+    <!-- ── 6. Children's Privacy ── -->
+    <section id="children">
+      <div class="section-header">
+        <div class="section-icon icon-green">👦</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>
+        Noirly Calculator is suitable for users of all ages. Because the app collects no personal
+        data whatsoever, it is safe for use by children. It fully complies with the
+        <strong>Children's Online Privacy Protection Act (COPPA)</strong> and equivalent regulations
+        in other jurisdictions.
+      </p>
+    </section>
+
+    <!-- ── 7. Changes to This Policy ── -->
+    <section id="changes">
+      <div class="section-header">
+        <div class="section-icon icon-gray">📝</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>
+        We may update this Privacy Policy from time to time. Any changes will be reflected by
+        updating the <strong>Last updated</strong> date at the top of this page. We encourage you
+        to review this page periodically for any changes.
+      </p>
+      <p>
+        Continued use of the app after any modifications to this policy constitutes your
+        acknowledgement of the changes.
+      </p>
+    </section>
+
+    <!-- ── 8. Contact ── -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-icon icon-blue">✉️</div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>
+        If you have any questions or concerns about this Privacy Policy, please reach out to us.
+        We aim to respond within <strong>48 hours</strong>.
+      </p>
+      <div class="contact-card">
+        <div class="contact-dot"></div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">privacy@noirlycalculator.app</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer>
+      <p>© 2026 <span class="brand">Noirly Calculator</span>. All rights reserved.</p>
+      <p style="margin-top: 6px;">This app is provided as-is with no warranty.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
